@@ -165,6 +165,7 @@ class imbalance_xgboost(BaseEstimator, ClassifierMixin):
         return prediction_output
 
     def score(self, X, y, sample_weight=None):
+        print("This is mine")
         y_pred_raw = self.predict(X)
         score_pred = self.score_eval_func(y_true=y, y_pred=y_pred_raw, mode='f1')
 
